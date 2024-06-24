@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Java Student List</h1>
+    <table border="1px" cellpadding="10px" cellspacing="0">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Skill</th>
+            <th>Percentage</th>
+            <th>Mock Rating</th>
+        </tr>
+        
+        {% for data in students_details %}
+        {% if data.mock == '1*' and data.skill == 'Java' %}
+            <tr>
+                <td>{{data.id}}</td>
+                <td>{{data.name}}</td>
+                <td>{{data.skill}}</td>
+                <td>{{data.percentage}}</td>
+                <td>{{data.mock}}</td>
+            </tr>
+        {% endif %}
+        {% endfor %}
+
+    </table>
+
+    <button type="submit"><a href="http://127.0.0.1:8000/onestar">Java&Python</a></button>
+    <button type="submit"><a href="http://127.0.0.1:8000/">Home</a></button>
+    
+</body>
+</html>
